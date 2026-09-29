@@ -1,0 +1,15 @@
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+import { Flip } from "gsap/Flip";
+import { Observer } from "gsap/Observer";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import { CustomEase } from "gsap/CustomEase";
+import { TextPlugin } from "gsap/TextPlugin";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger, SplitText, Flip, Observer, MotionPathPlugin, DrawSVGPlugin, MorphSVGPlugin, ScrambleTextPlugin, CustomEase, TextPlugin, useGSAP);
+export { gsap, ScrollTrigger, SplitText, Flip, Observer, useGSAP };

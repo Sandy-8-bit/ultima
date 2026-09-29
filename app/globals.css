@@ -2,25 +2,65 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b0b14;
+  --primary: #aa10d0;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f2f8;
+  --secondary-foreground: #0b0b14;
+  --muted: #f3f2f8;
+  --muted-foreground: #696574;
+  --border: #e2e0ec;
+  --input: #e2e0ec;
+  --ring: #aa10d0;
+  --radius: 1.25rem;
+  --popover: #ffffff;
+  --popover-foreground: #0b0b14;
+  --card: #ffffff;
+  --card-foreground: #0b0b14;
+  --accent: #f3f2f8;
+  --accent-foreground: #0b0b14;
+  --destructive: #c92b39;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-brand-purple: #aa10d0;
+  --color-brand-green: #01a862;
+  --color-brand-blue: #0094da;
+  --color-ink: #0b0b14;
+  --color-paper: #ffffff;
+  --color-mist: #f3f2f8;
+  --color-line: #e2e0ec;
+  --color-status-green: #5bc65b;
+  --color-status-amber: #f5c542;
+  --color-status-red: #ef5350;
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+  --font-mono: var(--font-code);
+  --shadow-hard: 6px 6px 0 #e2e0ec;
+  --shadow-hard-dark: 6px 6px 0 #252530;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+::selection { background: #ead0f2; color: #0b0b14; }
+html.lenis, html.lenis body { height: auto; }
+.lenis-smooth { scroll-behavior: auto !important; }
+.lenis-stopped { overflow: hidden; }
+.hex { clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); }
+.split-line { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }

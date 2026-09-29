@@ -1,0 +1,14 @@
+export const features = [
+  { slug: "wise-board", name: "Wise Board", verb: "See the whole picture.", title: "One screen.\nThe whole estate.", description: "A centralized view of health, performance, and what happens next.", color: "purple", icon: "board", points: ["Current health, one-week predictions, one-month forecasts.", "Trace potential impacts across connected systems.", "Expert feedback makes the next prediction smarter."] },
+  { slug: "wise-actions", name: "Wise Actions", verb: "Turn insight into action.", title: "Insight to fix.\nIn one click.", description: "Real-time recommendations. Runbook-driven fixes. One place to act.", color: "green", icon: "actions", points: ["Archive files and clear logs before disks fill.", "Execute a fix or raise a pre-filled ServiceNow ticket.", "Capture resolution notes to improve future recommendations."] },
+  { slug: "wise-explore", name: "Wise Explore", verb: "Find what matters.", title: "Find the one red dot\nin a thousand.", description: "Filter your entire estate. Keep the context. Get to the answer.", color: "blue", icon: "explore", points: ["Filter by health, component, environment, application, and region.", "Identify critical systems without losing context.", "Find relevant operational insights faster."] },
+  { slug: "wise-monitory", name: "Wise Monitory", verb: "Stay one step ahead.", title: "Before Black Friday\nbreaks it.", description: "Understand peak patterns. Spot potential failures before thresholds are breached.", color: "blue", icon: "monitor", points: ["Track CPU, memory, disk, and network utilization.", "Explore system logs, database logs, and anomalies.", "Anticipate campaigns, seasonal surges, and utilization spikes."] },
+  { slug: "wise-ai", name: "Wise AI", verb: "Just ask your infrastructure.", title: "Big questions.\nClear answers.", description: "Your virtual IT consultant. Ask naturally. Act confidently.", color: "purple", icon: "ai", points: ["Ask about health, incidents, utilization, and tickets.", "Turn operational data into plain-language guidance.", "Learn from interactions and infrastructure context."] },
+  { slug: "ai-workflows", name: "AI Workflows", verb: "Let infrastructure heal.", title: "Self-healing\nstarts here.", description: "Detect. Diagnose. Fix. Validate. Re-learn. Close the loop.", color: "green", icon: "workflow", points: ["Auto-healing for MongoDB, Apache, MSSQL, and Nginx.", "Restore permissions, configuration, and availability.", "Validate fixes and learn from every resolution."] },
+] as const;
+export const stats = [
+  { value: 25, label: "Early issue detection", note: "See the warning signs sooner." },
+  { value: 60, label: "Early detection of P1/P2 issues", note: "Find critical issues before they escalate." },
+  { value: 50, label: "Less incident resolution time", note: "Up to 50% with prescriptive actions." },
+  { value: 40, label: "Lower operational costs", note: "Optimize resources. Reduce reactive work." },
+];
