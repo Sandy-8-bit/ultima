@@ -1,7 +1,78 @@
-import { Activity, ArrowUpRight, Blocks, BrainCircuit, Building2, Database, Factory, HeartPulse, LayoutDashboard, Network, Search, Server, ShieldCheck, ShoppingBag, Sparkles, Workflow, Zap } from "lucide-react";
+import {
+  Activity,
+  ArrowUpRight,
+  Blocks,
+  BrainCircuit,
+  Building2,
+  Database,
+  Factory,
+  HeartPulse,
+  LayoutDashboard,
+  Network,
+  Search,
+  Server,
+  ShieldCheck,
+  ShoppingBag,
+  Sparkles,
+  Workflow,
+  Zap,
+} from "lucide-react";
+
 import { cn } from "@/lib/utils";
-export function Logo({ className, wordmark = true }: { className?: string; wordmark?: boolean }) {
-  return <span className={cn("inline-flex items-center gap-2.5", className)}><svg viewBox="0 0 46 44" className="h-9 w-9 shrink-0" fill="none" aria-hidden="true"><path d="M23 1 36 8.5v15L23 31 10 23.5v-15Z" fill="#AA10D0"/><path d="m13 18 13 7.5v15L13 48 0 40.5v-15Z" transform="translate(0 -5)" fill="#01A862"/><path d="m33 18 13 7.5v15L33 48 20 40.5v-15Z" transform="translate(0 -5)" fill="#0094DA"/><path d="m12 22 11 6 11-6v8l-11 6-11-6Z" fill="white" fillOpacity=".85"/></svg>{wordmark && <span className="font-display text-[22px] font-bold tracking-[-1px]">wise<span className="font-normal">ultima</span><span className="ml-0.5 align-top text-[9px]">™</span></span>}</span>;
+
+export function Logo({
+  className,
+  wordmark = true,
+  dark = false,
+}: {
+  className?: string;
+  wordmark?: boolean;
+  dark?: boolean;
+}) {
+  return (
+    <span className={cn("inline-flex items-center gap-2.5", className)}>
+      <img
+        src={dark ? "/logo-dark.svg" : "/logo.svg"}
+        alt="WiseUltima"
+        className="h-auto"
+      />
+    </span>
+  );
 }
-const icons = { board: LayoutDashboard, actions: Zap, explore: Search, monitor: Activity, ai: Sparkles, workflow: Workflow, finance: Building2, healthcare: HeartPulse, retail: ShoppingBag, manufacturing: Factory, server: Server, database: Database, network: Network, intelligence: BrainCircuit, shield: ShieldCheck, blocks: Blocks, arrow: ArrowUpRight };
-export function Icon({ name, className }: { name: string; className?: string }) { const Component = icons[name as keyof typeof icons] || Blocks; return <Component strokeWidth={1.7} className={cn("h-5 w-5", className)} />; }
+
+const icons = {
+  board: LayoutDashboard,
+  actions: Zap,
+  explore: Search,
+  monitor: Activity,
+  ai: Sparkles,
+  workflow: Workflow,
+  finance: Building2,
+  healthcare: HeartPulse,
+  retail: ShoppingBag,
+  manufacturing: Factory,
+  server: Server,
+  database: Database,
+  network: Network,
+  intelligence: BrainCircuit,
+  shield: ShieldCheck,
+  blocks: Blocks,
+  arrow: ArrowUpRight,
+};
+
+export function Icon({
+  name,
+  className,
+}: {
+  name: string;
+  className?: string;
+}) {
+  const Component = icons[name as keyof typeof icons] || Blocks;
+
+  return (
+    <Component
+      strokeWidth={1.7}
+      className={cn("h-5 w-5", className)}
+    />
+  );
+}

@@ -63,4 +63,39 @@ html.lenis, html.lenis body { height: auto; }
 .lenis-stopped { overflow: hidden; }
 .hex { clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); }
 .split-line { overflow: hidden; }
+.product-illustration { container-type: inline-size; }
+.product-shell { display: flex; min-height: 440px; }
+.product-rail { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 58px; flex-shrink: 0; padding: 20px 8px; border-right: 1px solid var(--border); }
+.product-toolbar { display: flex; align-items: center; gap: 18px; min-height: 54px; padding: 12px 20px; border-bottom: 1px solid var(--border); font-size: 10px; }
+.product-canvas { padding: 24px; background: #faf9fc; }
+.explore-result { display: grid; grid-template-columns: .8fr 1fr 1.5fr; border: 1px solid var(--border); border-radius: 10px; background: white; overflow: hidden; }
+.explore-focus { grid-template-columns: .8fr 1.4fr; }
+.product-cell { padding: 16px; }
+.product-cell + .product-cell { border-left: 1px solid var(--border); }
+.product-column-title { font-size: 10px; font-weight: 600; color: var(--muted-foreground); }
+.health-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.health-focus { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ai-layout { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 28px; }
+.ai-focus { grid-template-columns: minmax(0, 1fr); }
+.ai-history { border-right: 1px solid var(--border); padding-right: 20px; }
+@container (max-width: 700px) {
+  .product-canvas { padding: 18px; }
+  .health-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .explore-result { grid-template-columns: 1fr; }
+  .explore-focus { grid-template-columns: .8fr 1.4fr; }
+  .product-cell + .product-cell { border-left: 0; border-top: 1px solid var(--border); }
+  .explore-focus .product-cell + .product-cell { border-left: 1px solid var(--border); border-top: 0; }
+  .ai-layout { grid-template-columns: minmax(0, 1fr); }
+  .ai-history { display: none; }
+}
+@container (max-width: 440px) {
+  .product-shell { flex-direction: column; }
+  .product-rail { width: 100%; flex-direction: row; justify-content: space-between; gap: 4px; padding: 10px; border-right: 0; border-bottom: 1px solid var(--border); }
+  .product-toolbar { flex-wrap: wrap; gap: 12px; padding: 12px; }
+  .product-toolbar > span:first-child { flex-basis: 100%; }
+  .product-canvas { padding: 14px; }
+  .explore-focus { grid-template-columns: 1fr; }
+  .explore-focus .product-cell + .product-cell { border-left: 0; border-top: 1px solid var(--border); }
+  .health-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
