@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -698,7 +698,7 @@ export function FeaturePage({ slug }: { slug: string }) {
           </div>
         </section>
       )}
-      {slug === "wise-monitory" && (
+      {/* {slug === "wise-monitory" && (
         <section data-reveal className={section}>
           <Points
             items={[
@@ -708,18 +708,8 @@ export function FeaturePage({ slug }: { slug: string }) {
             ]}
           />
         </section>
-      )}
-      {slug === "wise-ai" && (
-        <section data-reveal className={section}>
-          <TrustLadder />
-          <Link
-            href="/roadmap"
-            className="mt-6 flex items-center gap-3 text-sm"
-          >
-            Coming: run fixes from chat <ArrowRight className="size-4" />
-          </Link>
-        </section>
-      )}
+      )} */}
+      {slug === "wise-ai" && <section data-reveal className={section}><TrustLadder /></section>}
       <CTA />
     </>
   );

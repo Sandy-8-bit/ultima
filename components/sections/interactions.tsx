@@ -195,17 +195,17 @@ export function DependencyMap() {
           variant="outline"
           className="border-brand-purple/20 text-brand-purple"
         >
-          Key differentiator
+          Impact analysis
         </Badge>
         <span className="text-[9px] text-muted-foreground">
-          Illustrative dependency map
+          1 critical issue · 3 systems at risk
         </span>
       </div>
       <svg
         viewBox="0 0 460 280"
         className="w-full"
         role="img"
-        aria-label="Critical server connected to payments, ledger database, and web portal"
+        aria-label="A critical disk issue on a server cascading to the payments API, ledger database, and customer web portal"
       >
         <g
           fill="none"
@@ -238,29 +238,40 @@ export function DependencyMap() {
         >
           {critical ? "Critical server" : "Healthy server"}
         </text>
-        {["Payments", "Ledger database", "Web portal"].map((n, i) => (
-          <g key={n}>
+        <text x="87" y="168" textAnchor="middle" fontSize="8" fill="#81778e">
+          {critical ? "Disk reaching 94%" : "Resolved"}
+        </text>
+        {[
+          { name: "Payments API", impact: "Transactions at risk" },
+          { name: "Ledger database", impact: "Write queue may grow" },
+          { name: "Customer portal", impact: "Checkout could slow" },
+        ].map(({ name, impact }, i) => (
+          <g key={name}>
             <rect
               x="295"
               y={i * 85 + 20}
               width="145"
               height="70"
               rx="10"
-              fill="#f6f4f9"
-              stroke="#e2e0ec"
+              fill={critical ? "#fffaf0" : "#f6f4f9"}
+              stroke={critical ? "#f2d48a" : "#e2e0ec"}
             />
             <circle
               cx="314"
               cy={i * 85 + 55}
               r="4"
-              fill={critical ? "#f5c542" : "#5bc65b"}
+              fill={critical ? "#ef5350" : "#5bc65b"}
             />
             <text x="332" y={i * 85 + 59} fontSize="10" fill="#15121d">
-              {n}
+              {name}
+            </text>
+            <text x="332" y={i * 85 + 75} fontSize="8" fill="#81778e">
+              {critical ? impact : "Operating normally"}
             </text>
           </g>
         ))}
       </svg>
+      <div className="mb-5 flex items-center gap-2 rounded-lg bg-mist px-3 py-2 text-[10px] text-muted-foreground"><span className={`size-2 rounded-full ${critical ? "bg-status-red" : "bg-status-green"}`} />{critical ? "Wise Board maps the blast radius before the issue spreads." : "All dependent services are healthy."}</div>
       <Button
         variant="outline"
         className="w-full text-xs"

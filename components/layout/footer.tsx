@@ -3,6 +3,28 @@ import { ArrowUpRight } from "lucide-react";
 import { Logo } from "@/components/brand";
 import { features } from "@/data/features";
 export function Footer() {
+  const footerColumns = [
+    {
+      title: "Platform",
+      links: features.map((feature) => ({ name: feature.name, href: `/features/${feature.slug}` })),
+    },
+    {
+      title: "Explore",
+      links: [
+        { name: "Product demo", href: "/demo" },
+        { name: "Benefits", href: "/benefits" },
+        { name: "FAQ", href: "/faq" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { name: "About Wise Work", href: "https://wisework.in/", external: true },
+        { name: "Contact", href: "/contact" },
+      ],
+    },
+  ];
+
   return (
     <footer className="bg-ink px-6 pb-20 pt-16 text-white md:px-12 md:pb-8">
       <div className="mx-auto max-w-7xl">
@@ -26,48 +48,16 @@ export function Footer() {
               info@wisework.in <ArrowUpRight className="size-4" />
             </a>
           </div>
-          {[
-            {
-              title: "Platform",
-              links: [
-                ["Overview", "/product"],
-                ...features.map((f) => [f.name, `/features/${f.slug}`]),
-              ],
-            },
-            {
-              title: "Explore",
-              links: [
-                ["Product demo", "/demo"],
-                ["How it works", "/how-it-works"],
-                ["Architecture", "/architecture"],
-                ["Integrations", "/integrations"],
-                ["Solutions", "/solutions"],
-                ["Benefits", "/benefits"],
-              ],
-            },
-            {
-              title: "Company",
-              links: [
-                ["About Wise Work", "/about"],
-                ["Roadmap", "/roadmap"],
-                ["FAQ", "/faq"],
-                ["Contact", "/contact"],
-              ],
-            },
-          ].map((col) => (
+          {footerColumns.map((col) => (
             <div key={col.title}>
               <p className="mb-5 font-mono text-xs uppercase tracking-widest text-white/40">
                 {col.title}
               </p>
               <div className="flex flex-col gap-3">
-                {col.links.map(([name, href]) => (
-                  <Link
-                    key={href}
-                    className="text-[13px] text-white/70 hover:text-white"
-                    href={href}
-                  >
-                    {name}
-                  </Link>
+                {col.links.map(({ name, href, external }) => external ? (
+                  <a key={href} className="text-[13px] text-white/70 hover:text-white" href={href} target="_blank" rel="noreferrer">{name}</a>
+                ) : (
+                  <Link key={href} className="text-[13px] text-white/70 hover:text-white" href={href}>{name}</Link>
                 ))}
               </div>
             </div>
