@@ -8,14 +8,10 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Icon } from "@/components/brand";
 import { DashboardPreview } from "@/components/demo/board";
 import { ProductShowcase } from "@/components/product-ui/ProductShowcase";
 import { ChallengeIllustration } from "@/components/product-ui/ChallengeIllustration";
-import {
-  DemoControlsIllustration,
-  PredictionIllustration,
-} from "@/components/product-ui/StoryIllustrations";
+import { PredictionIllustration } from "@/components/product-ui/StoryIllustrations";
 import { HexVisual } from "@/components/three/hex-visual";
 import { Eyebrow, CTA, FeatureGrid, IndustryGrid, Stats } from "./shared";
 import {
@@ -205,15 +201,14 @@ export function Home() {
             data-split
             className="mt-6 font-display text-5xl leading-[1.08] tracking-[-.055em] md:text-6xl"
           >
-            Now it
+            See trouble
             <br />
-            <span className="text-brand-purple">sees ahead.</span>
+            <span className="text-brand-purple">before it starts.</span>
           </h2>
           <p className="mt-6 max-w-sm text-sm leading-7 text-muted-foreground">
-            Today’s health. Next week’s warning. Next month’s forecast.
-            <br />
-            Make your next decision with the full picture.
+            See what is healthy, what is at risk, and the best next step.
           </p>
+          <div className="mt-7 flex flex-wrap gap-2 text-[10px]">{["Live health", "Early warning", "Clear action"].map((item) => <span key={item} className="rounded-full bg-mist px-3 py-2 text-muted-foreground">{item}</span>)}</div>
           <Link
             href="/features/wise-board"
             className="mt-7 inline-flex items-center gap-5 text-xs font-semibold"
@@ -260,9 +255,9 @@ export function Home() {
               data-split
               className="mt-6 font-display text-5xl leading-[1.08] tracking-[-.055em] md:text-6xl"
             >
-              Then it
+              Identify the issue
               <br />
-              <span className="text-brand-green">fixes it.</span>
+              <span className="text-brand-green">Resolve it faster.</span>
             </h2>
             <p className="mt-6 max-w-sm text-sm leading-7 text-white/50">
               From real-time recommendations to one-click resolution.
