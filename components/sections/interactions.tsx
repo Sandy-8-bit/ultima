@@ -302,19 +302,17 @@ export function HealingVisual() {
           <Icon name="actions" />
         </span>
         <div>
-          <p className="text-sm">Potential disk exhaustion</p>
-          <p className="mt-1 font-mono text-[10px] text-white/40">
-            a010065p210 · Sample scenario
-          </p>
+          <p className="font-mono text-[10px] text-white/40">SIMULATION · NO LIVE EXECUTION</p>
+          <p className="mt-1 text-sm">MSSQL: Binary permission failure</p>
         </div>
       </div>
       <div className="my-7 rounded-xl border border-white/10 bg-ink p-5 font-mono text-xs leading-8">
         {[
-          "Detect — disk approaching capacity",
-          "Diagnose — log growth on /var",
-          "Fix — archive files, clear logs",
-          "Validate — utilization healthy",
-          "AI Re-learn — update knowledge base",
+          "Detect: 203/EXEC",
+          "Diagnose: Database service cannot start",
+          "Fix: Restore execute permission, validate startup, confirm health.",
+          "Validate: startup and availability confirmed",
+          "AI Re-learn: resolution captured in sample knowledge base",
         ].map((text, i) => (
           <p
             key={text}
@@ -332,12 +330,12 @@ export function HealingVisual() {
         {step === 4 ? (
           <>
             <Check />
-            Healed. Run again?
+            Simulation complete. Run again?
           </>
         ) : (
           <>
             <Icon name="actions" />
-            Simulate one-click fix
+            Simulate a failure
           </>
         )}
       </Button>
@@ -412,9 +410,8 @@ export function LearningLoop() {
 }
 
 export function WorkflowExplorer() {
-  const [service, setService] = useState("All"),
-    [selected, setSelected] = useState(0),
-    [step, setStep] = useState(-1);
+  const [step, setStep] = useState(-1);
+  const selected = 0;
   const scope = useRef<HTMLDivElement>(null);
   const { contextSafe } = useGSAP({ scope });
   const run = contextSafe(() => {
@@ -424,55 +421,18 @@ export function WorkflowExplorer() {
   });
   return (
     <div ref={scope}>
-      <div className="mb-8 flex flex-wrap gap-2">
-        {["All", "MongoDB", "Apache", "MSSQL", "Nginx"].map((s) => (
-          <Button
-            key={s}
-            variant={s === service ? "default" : "outline"}
-            onClick={() => setService(s)}
-          >
-            {s}
-          </Button>
-        ))}
+      <div className="mb-8 max-w-xl">
+        <p className="font-mono text-[10px] uppercase tracking-[.16em] text-brand-purple">Supported systems</p>
+        <h3 className="mt-3 font-display text-3xl tracking-tight">Help for the services that keep your business running.</h3>
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">AI Workflows helps your team detect issues, guide recovery, and confirm service health across common infrastructure.</p>
       </div>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {workflows
-          .filter((w) => service === "All" || w.service === service)
-          .map((w) => (
-            <Card
-              data-reveal
-              key={`${w.service}${w.cause}`}
-              className="gap-4 rounded-xl border-line p-6 shadow-none"
-            >
-              <div className="flex items-center justify-between">
-                <Badge variant="secondary">{w.service}</Badge>
-                <span className="font-mono text-[10px] text-muted-foreground">
-                  {w.code}
-                </span>
-              </div>
-              <h3 className="font-display text-xl tracking-tight">{w.cause}</h3>
-              <p className="text-xs text-muted-foreground">
-                Impact · {w.impact}
-              </p>
-              <p className="text-xs leading-6">
-                <span className="text-[#007746]">AI fix · </span>
-                {w.fix}
-              </p>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => {
-                  setSelected(workflows.indexOf(w));
-                  setStep(-1);
-                  document
-                    .getElementById("workflow-terminal")
-                    ?.scrollIntoView({ behavior: "instant", block: "center" });
-                }}
-              >
-                Select simulation <ArrowRight />
-              </Button>
-            </Card>
-          ))}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          ["MongoDB", "Database reliability", "database"],
+          ["Apache", "Web server recovery", "server"],
+          ["MSSQL", "Service health checks", "database"],
+          ["Nginx", "Application availability", "server"],
+        ].map(([service, description, icon]) => <Card data-reveal key={service} className="gap-0 rounded-xl border-line p-6 shadow-none"><span className="flex size-11 items-center justify-center rounded-xl bg-brand-green/10 text-[#007746]"><Icon name={icon} className="size-5" /></span><h4 className="mt-7 font-display text-2xl tracking-tight">{service}</h4><p className="mt-2 text-xs text-muted-foreground">{description}</p><p className="mt-6 border-t border-line pt-4 text-[10px] text-[#007746]">Detect · Guide · Validate</p></Card>)}
       </div>
       <div
         id="workflow-terminal"
