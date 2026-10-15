@@ -9,16 +9,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DashboardPreview } from "@/components/demo/board";
-import { ProductShowcase } from "@/components/product-ui/ProductShowcase";
-import { ChallengeIllustration } from "@/components/product-ui/ChallengeIllustration";
-import { PredictionIllustration } from "@/components/product-ui/StoryIllustrations";
+import { OperationsStory } from "./operations-story";
+
 import { HexVisual } from "@/components/three/hex-visual";
-import { Eyebrow, CTA, FeatureGrid, IndustryGrid, Stats } from "./shared";
+import { Eyebrow, CTA, IndustryGrid } from "./shared";
 import {
-  DependencyMap,
   FAQ,
-  HealingVisual,
-  LearningLoop,
   Video,
 } from "./interactions";
 export function Home() {
@@ -152,156 +148,10 @@ export function Home() {
       {/* <section className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-16">
         <Stats />
       </section> */}
-      <section id="the-story" className="bg-mist px-6 py-20 md:px-10 md:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
-          <div data-reveal>
-            <Eyebrow>01 / The challenge</Eyebrow>
-            <h2
-              data-split
-              className="mt-6 font-display text-5xl leading-[1.06] tracking-[-.06em] md:text-6xl"
-            >
-              Your IT never stops.
-              <br />
-              <span className="text-muted-foreground">
-                Neither should
-                <br />
-                your foresight.
-              </span>
-            </h2>
-            <p className="mt-6 max-w-sm text-sm leading-7 text-muted-foreground">
-              Multiple Systems. Disconnected signals. Reactive decisions.
-              <br />
-              There’s a better way to keep everything moving.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {["Complexity", "Delayed insights", "Reactive response"].map(
-                (n) => (
-                  <span
-                    key={n}
-                    className="rounded-full border border-line bg-white px-3 py-2 text-[10px]"
-                  >
-                    {n}
-                  </span>
-                ),
-              )}
-            </div>
-          </div>
-          <div data-reveal className="min-w-0">
-            <ChallengeIllustration />
-          </div>
-        </div>
-      </section>
-      <section className="mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 md:grid-cols-2 md:px-10">
-        <div data-reveal className="order-2 md:order-1">
-          <PredictionIllustration />
-        </div>
-        <div data-reveal className="order-1 md:order-2 md:pl-10">
-          <Eyebrow>02 / Predict</Eyebrow>
-          <h2
-            data-split
-            className="mt-6 font-display text-5xl leading-[1.08] tracking-[-.055em] md:text-6xl"
-          >
-            See trouble
-            <br />
-            <span className="text-brand-purple">before it starts.</span>
-          </h2>
-          <p className="mt-6 max-w-sm text-sm leading-7 text-muted-foreground">
-            See what is healthy, what is at risk, and the best next step.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-2 text-[10px]">{["Live health", "Early warning", "Clear action"].map((item) => <span key={item} className="rounded-full bg-mist px-3 py-2 text-muted-foreground">{item}</span>)}</div>
-          <Link
-            href="/features/wise-board"
-            className="mt-7 inline-flex items-center gap-5 text-xs font-semibold"
-          >
-            Meet Wise Board <ArrowUpRight className="size-4" />
-          </Link>
-        </div>
-      </section>
-      <section className="bg-mist px-6 py-24 md:px-10">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 md:grid-cols-2">
-          <div data-reveal>
-            <Eyebrow>03 / Prevent</Eyebrow>
-            <h2
-              data-split
-              className="mt-6 font-display text-5xl leading-[1.08] tracking-[-.055em] md:text-6xl"
-            >
-              One system fails.
-              <br />
-              See everything it impacts.
-            </h2>
-            <p className="mt-6 max-w-sm text-sm leading-7 text-muted-foreground">
-              When a system fails, instantly trace every connected system that could be affected. See the full impact before failures spread.
-            </p>
-            <Link
-              href="/features/wise-board"
-              className="mt-7 inline-flex items-center gap-5 text-xs font-semibold"
-            >
-              Explore connected intelligence <ArrowUpRight className="size-4" />
-            </Link>
-          </div>
-          <div data-reveal>
-            <DependencyMap />
-          </div>
-        </div>
-      </section>
-      <section className="bg-ink px-6 py-24 text-white md:px-10">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 md:grid-cols-2">
-          <div data-reveal>
-            <HealingVisual />
-          </div>
-          <div data-reveal className="md:pl-10">
-            <Eyebrow className="text-white/50">04 / Act</Eyebrow>
-            <h2
-              data-split
-              className="mt-6 font-display text-5xl leading-[1.08] tracking-[-.055em] md:text-6xl"
-            >
-              Identify the issue
-              <br />
-              <span className="text-brand-green">Resolve it faster.</span>
-            </h2>
-            <p className="mt-6 max-w-sm text-sm leading-7 text-white/50">
-              From real-time recommendations to one-click resolution.
-              <br />
-              Or a ServiceNow ticket, routed to the right team.
-            </p>
-            <Link
-              href="/features/wise-actions"
-              className="mt-7 inline-flex items-center gap-5 text-xs font-semibold"
-            >
-              Meet Wise Actions <ArrowUpRight className="size-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:px-10">
-        <div data-reveal>
-          <Eyebrow>05 / Evolve</Eyebrow>
-          <h2
-            data-split
-            className="mt-6 font-display text-5xl leading-[1.08] tracking-[-.055em] md:text-6xl"
-          >
-            Every fix.
-            <br />A little wiser.
-          </h2>
-          <p className="mt-6 max-w-sm text-sm leading-7 text-muted-foreground">
-            Your expertise feeds the next prediction.
-            <br />
-            Every resolution builds a smarter knowledge base.
-          </p>
-          <Link
-            href="/features/ai-workflows"
-            className="mt-7 inline-flex items-center gap-5 text-xs font-semibold"
-          >
-            Explore the learning loop <ArrowUpRight className="size-4" />
-          </Link>
-        </div>
-        <div data-reveal>
-          <LearningLoop />
-        </div>
-      </section>
+      <OperationsStory />
       <section className="bg-brand-purple px-6 py-16 text-white md:px-10">
         <div className="mx-auto max-w-7xl">
-          <Eyebrow className="text-white/65">06 / The results</Eyebrow>
+          <h2 className="font-display text-4xl tracking-[-.05em] md:text-5xl">ROI</h2>
           <div className="mt-8 grid gap-10 md:grid-cols-4">
             {[
               [25, "Early issue detection"],
@@ -355,12 +205,6 @@ export function Home() {
                 All the right moves.
               </h2>
             </div>
-            <Link
-              href="/features"
-              className="flex items-center gap-4 text-xs font-semibold"
-            >
-              Explore the platform <ArrowUpRight className="size-4" />
-            </Link>
           </div>
           <FeatureGrid />
         </div>

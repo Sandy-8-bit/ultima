@@ -8,8 +8,6 @@ import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import {
@@ -19,8 +17,7 @@ import {
   SheetDescription,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Logo, Icon } from "@/components/brand";
-import { features } from "@/data/features";
+import { Logo } from "@/components/brand";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
@@ -57,48 +54,9 @@ export function Navbar() {
         </Link>
         <NavigationMenu className="hidden lg:flex" viewport={false}>
           <NavigationMenuList className="gap-1 xl:gap-2">
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link href="/" className={cn("px-3 py-3 text-[13px]", path === "/" && "text-brand-purple")}>Home</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-[13px]">
-                Features
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="rounded-xl border-line bg-white p-4">
-                <div className="grid w-[570px] grid-cols-2 gap-2">
-                  {features.map((f) => (
-                    <NavigationMenuLink asChild key={f.slug}>
-                      <Link
-                        className="flex flex-row gap-3 rounded-lg p-4 hover:bg-mist"
-                        href={`/features/${f.slug}`}
-                      >
-                        <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-mist text-brand-purple">
-                          <Icon name={f.icon} />
-                        </span>
-                        <span>
-                          <span className="block font-medium">{f.name}</span>
-                          <span className="text-xs text-muted-foreground">
-                            {f.verb}
-                          </span>
-                        </span>
-                      </Link>
-                    </NavigationMenuLink>
-                  ))}
-                </div>
-                <Link
-                  href="/features"
-                  className="mt-2 block border-t border-line px-4 pt-4 text-sm"
-                >
-                  Explore all features ↗
-                </Link>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
             {[
-            
+              ["Home", "/"],
               ["Demo", "/demo"],
-              ["Benefits", "/benefits"],
             ].map(([label, href]) => (
               <NavigationMenuItem key={href}>
                 <NavigationMenuLink asChild>
@@ -149,10 +107,7 @@ export function Navbar() {
               <nav className="mt-5 flex flex-col gap-1">
                 {[
                   ["Home", "/"],
-                  ["All features", "/features"],
-                  ...features.map((f) => [f.name, `/features/${f.slug}`]),
-                  ["Product demo", "/demo"],
-                  ["Benefits", "/benefits"],
+                  ["Demo", "/demo"],
                 ].map(([name, href]) => (
                   <Link
                     key={href}

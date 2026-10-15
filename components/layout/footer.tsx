@@ -1,18 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Logo } from "@/components/brand";
-import { features } from "@/data/features";
 export function Footer() {
   const footerColumns = [
-    {
-      title: "Platform",
-      links: features.map((feature) => ({ name: feature.name, href: `/features/${feature.slug}` })),
-    },
     {
       title: "Explore",
       links: [
         { name: "Product demo", href: "/demo" },
-        { name: "Benefits", href: "/benefits" },
         { name: "FAQ", href: "/faq" },
       ],
     },
@@ -34,7 +28,7 @@ export function Footer() {
         >
           Predict. Prevent. <span className="text-brand-green">Act.</span>
         </div>
-        <div className="grid gap-10 py-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 py-12 md:grid-cols-[2fr_1fr_1fr]">
           <div>
             <Logo />
             <p className="mt-5 max-w-64 text-sm leading-6 text-white/55">
