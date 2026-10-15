@@ -28,7 +28,7 @@ export function Home() {
         <div className="grid items-center gap-12 lg:grid-cols-[.92fr_1.08fr] lg:gap-8">
           <div data-page-enter className="relative z-10">
             <Eyebrow className="text-[9px] tracking-[.17em]">
-              From reactive IT to proactive intelligence
+              From reactive to proactive intelligence
             </Eyebrow>
             <h1 className="mt-7 font-display text-[clamp(4.3rem,7.2vw,7.1rem)] leading-[.98] font-medium tracking-[-.075em]">
               <span className="block">Predict.</span>
@@ -41,8 +41,8 @@ export function Home() {
               Intelligent Operations, Simplified!
             </p>
             <p className="mt-3 max-w-[355px] text-[13px] leading-[1.9] text-muted-foreground">
-              See issues before they happen. Resolve them before they matter.
-              Put your IT a step ahead.
+              Predict issues before they arise. Resolve risks before they escalate. 
+              Keep your IT one step ahead.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -149,9 +149,9 @@ export function Home() {
           <span>Apache</span>
         </div>
       </section> */}
-      <section className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-16">
+      {/* <section className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-16">
         <Stats />
-      </section>
+      </section> */}
       <section id="the-story" className="bg-mist px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
           <div data-reveal>
@@ -169,7 +169,7 @@ export function Home() {
               </span>
             </h2>
             <p className="mt-6 max-w-sm text-sm leading-7 text-muted-foreground">
-              Multiple clouds. Disconnected signals. Reactive decisions.
+              Multiple Systems. Disconnected signals. Reactive decisions.
               <br />
               There’s a better way to keep everything moving.
             </p>
@@ -320,7 +320,7 @@ export function Home() {
           </div>
         </div>
       </section>
-      <ProductShowcase />
+      {/* <ProductShowcase /> */}
       <section
         id="watch-video"
         className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24 md:px-10"
@@ -340,7 +340,7 @@ export function Home() {
           <Video />
         </div>
       </section>
-      <section className="bg-mist px-6 py-24 md:px-10">
+      {/* <section className="bg-mist px-6 py-24 md:px-10">
         <div className="mx-auto max-w-7xl">
           <div
             data-reveal
@@ -364,7 +364,7 @@ export function Home() {
           </div>
           <FeatureGrid />
         </div>
-      </section>
+      </section> */}
       {/* <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:px-10">
         <div data-reveal>
           <Eyebrow>No slides. Just possibilities.</Eyebrow>
