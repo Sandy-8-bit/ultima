@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0b0b14;
-  --primary: #aa10d0;
+  --background: #f8f5f2;
+  --foreground: #1b1c20;
+  --primary: #ff38af;
   --primary-foreground: #ffffff;
-  --secondary: #f3f2f8;
-  --secondary-foreground: #0b0b14;
-  --muted: #f3f2f8;
-  --muted-foreground: #696574;
-  --border: #e2e0ec;
-  --input: #e2e0ec;
-  --ring: #aa10d0;
-  --radius: 1.25rem;
+  --secondary: #f4efeb;
+  --secondary-foreground: #1b1c20;
+  --muted: #f4efeb;
+  --muted-foreground: #6b6466;
+  --border: #ece6e2;
+  --input: #e6dfda;
+  --ring: #ff38af;
+  --radius: 1rem;
   --popover: #ffffff;
-  --popover-foreground: #0b0b14;
+  --popover-foreground: #1b1c20;
   --card: #ffffff;
-  --card-foreground: #0b0b14;
-  --accent: #f3f2f8;
-  --accent-foreground: #0b0b14;
-  --destructive: #c92b39;
+  --card-foreground: #1b1c20;
+  --accent: #fff0f8;
+  --accent-foreground: #1b1c20;
+  --destructive: #d92d20;
 }
 
 @theme inline {
@@ -41,33 +41,59 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
-  --color-brand-purple: #aa10d0;
-  --color-brand-green: #01a862;
-  --color-brand-blue: #0094da;
-  --color-ink: #0b0b14;
+  --color-brand-pink: #ff38af;
+  --color-brand-pink-deep: #c8127f;
+  --color-brand-pink-soft: #ffe3f3;
+  --color-brand-orange: #ff6b2c;
+  --color-brand-orange-deep: #c2410c;
+  --color-brand-ember: #f2421b;
+  --color-brand-green: #0b9e76;
+  --color-brand-green-deep: #067a5b;
+  --color-ink: #1b1c20;
+  --color-graphite: #383838;
   --color-paper: #ffffff;
-  --color-mist: #f3f2f8;
-  --color-line: #e2e0ec;
-  --color-status-green: #5bc65b;
-  --color-status-amber: #f5c542;
-  --color-status-red: #ef5350;
+  --color-canvas: #f8f5f2;
+  --color-mist: #f4efeb;
+  --color-line: #ece6e2;
+  --color-status-green: #0b9e76;
+  --color-status-amber: #f5a524;
+  --color-status-amber-deep: #8a5a00;
+  --color-status-red: #f04438;
+  --color-status-red-deep: #b42318;
   --font-sans: var(--font-body);
   --font-display: var(--font-heading);
   --font-mono: var(--font-code);
-  --shadow-hard: 6px 6px 0 #e2e0ec;
-  --shadow-hard-dark: 6px 6px 0 #252530;
+  --shadow-hard: 0 1px 2px rgb(27 28 32 / 4%), 0 12px 40px -12px rgb(27 28 32 / 12%);
+  --shadow-hard-dark: 0 1px 2px rgb(0 0 0 / 20%), 0 18px 50px -16px rgb(0 0 0 / 45%);
+  --shadow-soft: 0 4px 22px #ededed;
+  --shadow-glow: 0 6px 18px -4px rgb(255 56 175 / 55%), 0 2px 6px rgb(255 120 90 / 25%);
+  --animate-drift: drift 14s ease-in-out infinite alternate;
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(.2,.7,.3,1) infinite;
+  @keyframes drift {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    100% { transform: translate3d(-4%, 3%, 0) scale(1.06); }
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(.85); opacity: .6; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
 }
-::selection { background: #ead0f2; color: #0b0b14; }
+::selection { background: #ffd1ec; color: #1b1c20; }
 html.lenis, html.lenis body { height: auto; }
 .lenis-smooth { scroll-behavior: auto !important; }
 .lenis-stopped { overflow: hidden; }
 .hex { clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); }
 .split-line { overflow: hidden; }
+/* Soft pink → orange → ember glow used behind illustrations (Figma "image 191"). */
+.glow-blob { background: radial-gradient(38% 42% at 62% 58%, #f2421b 0%, transparent 70%), radial-gradient(40% 40% at 40% 70%, #ff8a3d 0%, transparent 72%), radial-gradient(42% 46% at 70% 30%, #ff38af 0%, transparent 70%), radial-gradient(30% 30% at 30% 35%, #b14fd8 0%, transparent 70%); filter: blur(48px); }
+.glow-blob-soft { background: radial-gradient(45% 50% at 60% 55%, rgb(255 107 44 / 55%) 0%, transparent 70%), radial-gradient(45% 50% at 35% 45%, rgb(255 56 175 / 45%) 0%, transparent 70%); filter: blur(40px); }
+.panel { background: linear-gradient(180deg, #ffffff 0%, #f6f4f3 100%); border: 1px solid var(--border); }
+.dot-grid { background-image: radial-gradient(rgb(27 28 32 / 7%) 1px, transparent 1px); background-size: 22px 22px; }
 .product-illustration { container-type: inline-size; }
 .product-shell { display: flex; min-height: 440px; }
 .product-rail { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 58px; flex-shrink: 0; padding: 20px 8px; border-right: 1px solid var(--border); }
 .product-toolbar { display: flex; align-items: center; gap: 18px; min-height: 54px; padding: 12px 20px; border-bottom: 1px solid var(--border); font-size: 10px; }
-.product-canvas { padding: 24px; background: #faf9fc; }
+.product-canvas { padding: 24px; background: #fbf9f7; }
 .explore-result { display: grid; grid-template-columns: .8fr 1fr 1.5fr; border: 1px solid var(--border); border-radius: 10px; background: white; overflow: hidden; }
 .explore-focus { grid-template-columns: .8fr 1.4fr; }
 .product-cell { padding: 16px; }

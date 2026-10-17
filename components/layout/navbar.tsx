@@ -46,14 +46,14 @@ export function Navbar() {
   return (
     <header
       ref={ref}
-      className="sticky top-0 z-50 border-b border-line bg-white"
+      className="sticky top-0 z-50 border-b border-ink/5 bg-canvas/80 backdrop-blur-xl"
     >
       <div className="mx-auto flex h-[82px] max-w-[1440px] items-center justify-between gap-5 px-5 md:px-10 xl:px-16">
         <Link href="/" aria-label="Wise Ultima home">
           <Logo />
         </Link>
         <NavigationMenu className="hidden lg:flex" viewport={false}>
-          <NavigationMenuList className="gap-1 xl:gap-2">
+          <NavigationMenuList className="gap-1 rounded-2xl border border-[#ebebeb] bg-white/70 p-1">
             {[
               ["Home", "/"],
               ["Demo", "/demo"],
@@ -63,8 +63,8 @@ export function Navbar() {
                   <Link
                     href={href}
                     className={cn(
-                      "px-3 py-3 text-[13px]",
-                      path === href && "text-brand-purple",
+                      "rounded-xl px-4 py-2 text-[14px] text-graphite transition-colors hover:bg-white hover:text-ink",
+                      path === href && "bg-white text-brand-pink-deep shadow-[0_1px_3px_rgb(27_28_32/8%)]",
                     )}
                   >
                     {label}
@@ -77,7 +77,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Button
             asChild
-            className="hidden h-10 rounded-lg bg-ink px-5 text-xs hover:bg-brand-purple sm:inline-flex"
+            className="hidden h-11 rounded-[14px] px-5 text-[13px] sm:inline-flex"
           >
             <Link
               onClick={() => track("book_demo", { source: "navigation" })}
@@ -97,7 +97,7 @@ export function Navbar() {
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent className="overflow-y-auto bg-white p-6">
+            <SheetContent className="overflow-y-auto bg-canvas p-6">
               <SheetTitle>
                 <Logo />
               </SheetTitle>
@@ -113,7 +113,7 @@ export function Navbar() {
                     key={href}
                     onClick={() => setOpen(false)}
                     href={href}
-                    className="rounded-lg px-3 py-2.5 text-sm hover:bg-mist"
+                    className={cn("rounded-xl px-3 py-2.5 text-sm hover:bg-white", path === href && "bg-white text-brand-pink-deep")}
                   >
                     {name}
                   </Link>

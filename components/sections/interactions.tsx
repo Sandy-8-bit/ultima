@@ -50,7 +50,7 @@ export function FAQ({ preview = false }: { preview?: boolean }) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Find your answer…"
-              className="h-11 pl-10"
+              className="h-12 rounded-2xl border-[#ebebeb] bg-white pl-10 shadow-soft"
             />
           </div>
           <div className="flex flex-wrap gap-2">
@@ -59,6 +59,7 @@ export function FAQ({ preview = false }: { preview?: boolean }) {
                 <Button
                   key={c}
                   size="sm"
+                  className="rounded-full px-4 shadow-none"
                   variant={c === category ? "default" : "outline"}
                   onClick={() => setCategory(c)}
                 >
@@ -72,9 +73,9 @@ export function FAQ({ preview = false }: { preview?: boolean }) {
       <Accordion type="single" collapsible>
         {list.map((f, i) => (
           <AccordionItem key={f.q} value={f.q} className="border-line">
-            <AccordionTrigger className="py-6 text-left text-sm font-medium hover:no-underline">
+            <AccordionTrigger className="py-6 text-left text-[15px] font-medium text-graphite hover:text-brand-pink-deep hover:no-underline">
               <span className="flex gap-5">
-                <span className="font-mono text-[10px] text-muted-foreground">
+                <span className="font-mono text-[11px] text-brand-pink-deep">
                   0{i + 1}
                 </span>
                 {f.q}
@@ -106,22 +107,28 @@ export function Video() {
           setOpen(true);
           track("watch_video", { available: ready });
         }}
-        className="group relative flex min-h-72 w-full flex-col items-center justify-center overflow-hidden rounded-2xl border border-line bg-[#eeebf3] py-14 shadow-hard md:min-h-96"
+        className="panel group relative flex min-h-72 w-full flex-col items-center justify-center overflow-hidden rounded-2xl py-14 shadow-hard md:min-h-[440px]"
         aria-label={ready ? "Watch Wise Ultima video" : "Video coming soon"}
       >
-        <div className="absolute -top-10 -left-8 size-44 rounded-full border border-[#d8d3e3]" />
-        <div className="absolute -right-10 -bottom-16 size-64 rounded-full border border-[#d8d3e3]" />
-        <Logo className="mb-10" />
-        <span
-          data-float
-          className="hex flex size-20 items-center justify-center bg-brand-purple text-white"
-        >
-          <Play className="ml-1 size-7" fill="currentColor" />
+        <div aria-hidden className="dot-grid absolute inset-0 [mask-image:radial-gradient(60%_60%_at_50%_50%,black,transparent)]" />
+        <div aria-hidden className="glow-blob absolute -right-24 -bottom-40 size-[420px] opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
+        <div aria-hidden className="glow-blob-soft absolute -top-32 -left-24 size-80 opacity-50" />
+        <span className="relative mb-10 inline-flex rounded-2xl bg-white px-3 py-1.5 shadow-soft">
+          <Logo />
         </span>
-        <span className="mt-7 font-display text-2xl tracking-tight">
-          Intelligent Operations, Simplified!
+        <span className="relative flex size-20 items-center justify-center">
+          <span aria-hidden className="absolute inset-0 rounded-full bg-brand-pink/40 motion-safe:animate-pulse-ring" />
+          <span
+            data-float
+            className="relative flex size-20 items-center justify-center rounded-full bg-brand-pink text-white shadow-glow transition-transform duration-300 group-hover:scale-105"
+          >
+            <Play className="ml-1 size-7" fill="currentColor" />
+          </span>
         </span>
-        <span className="mt-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+        <span className="relative mt-8 font-display text-2xl tracking-[-.02em] text-graphite md:text-3xl">
+          Intelligent Operations, <em className="font-light">Simplified!</em>
+        </span>
+        <span className="relative mt-3 rounded-full bg-white/80 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
           {ready ? "Play the product film" : "Product film · coming soon"}
         </span>
       </button>
@@ -144,7 +151,7 @@ export function Video() {
               allowFullScreen
             />
           ) : (
-            <div className="flex flex-col items-center gap-6 bg-mist py-12">
+            <div className="flex flex-col items-center gap-6 rounded-xl bg-mist py-12">
               <Logo />
               <p className="text-sm text-muted-foreground">
                 The Wise Ultima product film is on its way.
@@ -193,7 +200,7 @@ export function DependencyMap() {
       <div className="mb-5 flex justify-between">
         <Badge
           variant="outline"
-          className="border-brand-purple/20 text-brand-purple"
+          className="border-brand-pink/20 text-brand-pink"
         >
           Impact analysis
         </Badge>
@@ -216,7 +223,7 @@ export function DependencyMap() {
           <path data-connection d="M110 140H315" />
           <path data-connection d="M110 140C210 140 200 225 315 225" />
         </g>
-        <circle data-pulse r="4" fill="#aa10d0" />
+        <circle data-pulse r="4" fill="#ff38af" />
         <rect
           x="20"
           y="100"
@@ -224,9 +231,9 @@ export function DependencyMap() {
           height="80"
           rx="12"
           fill={critical ? "#fff0f0" : "#edf9ef"}
-          stroke={critical ? "#ef5350" : "#5bc65b"}
+          stroke={critical ? "#f04438" : "#0b9e76"}
         />
-        <text x="87" y="130" textAnchor="middle" fontSize="11" fill="#15121d">
+        <text x="87" y="130" textAnchor="middle" fontSize="11" fill="#1b1c20">
           a010065p210
         </text>
         <text
@@ -238,7 +245,7 @@ export function DependencyMap() {
         >
           {critical ? "Critical server" : "Healthy server"}
         </text>
-        <text x="87" y="168" textAnchor="middle" fontSize="8" fill="#81778e">
+        <text x="87" y="168" textAnchor="middle" fontSize="8" fill="#8c8480">
           {critical ? "Disk reaching 94%" : "Resolved"}
         </text>
         {[
@@ -253,19 +260,19 @@ export function DependencyMap() {
               width="145"
               height="70"
               rx="10"
-              fill={critical ? "#fffaf0" : "#f6f4f9"}
-              stroke={critical ? "#f2d48a" : "#e2e0ec"}
+              fill={critical ? "#fffaf0" : "#faf6f3"}
+              stroke={critical ? "#f2d48a" : "#ece6e2"}
             />
             <circle
               cx="314"
               cy={i * 85 + 55}
               r="4"
-              fill={critical ? "#ef5350" : "#5bc65b"}
+              fill={critical ? "#f04438" : "#0b9e76"}
             />
-            <text x="332" y={i * 85 + 59} fontSize="10" fill="#15121d">
+            <text x="332" y={i * 85 + 59} fontSize="10" fill="#1b1c20">
               {name}
             </text>
-            <text x="332" y={i * 85 + 75} fontSize="8" fill="#81778e">
+            <text x="332" y={i * 85 + 75} fontSize="8" fill="#8c8480">
               {critical ? impact : "Operating normally"}
             </text>
           </g>
@@ -380,9 +387,9 @@ export function LearningLoop() {
     >
       <div
         ref={ring}
-        className="absolute inset-6 rounded-full border-2 border-dashed border-brand-purple/25"
+        className="absolute inset-6 rounded-full border-2 border-dashed border-brand-pink/25"
       >
-        <span className="absolute top-1/2 -left-2 size-4 rounded-full bg-brand-purple" />
+        <span className="absolute top-1/2 -left-2 size-4 rounded-full bg-brand-pink" />
         <span className="absolute top-1/2 -right-2 size-4 rounded-full bg-brand-green" />
       </div>
       <div className="flex size-36 items-center justify-center rounded-full border border-line bg-white shadow-hard">
@@ -422,7 +429,7 @@ export function WorkflowExplorer() {
   return (
     <div ref={scope}>
       <div className="mb-8 max-w-xl">
-        <p className="font-mono text-[10px] uppercase tracking-[.16em] text-brand-purple">Supported systems</p>
+        <p className="font-mono text-[10px] uppercase tracking-[.16em] text-brand-pink">Supported systems</p>
         <h3 className="mt-3 font-display text-3xl tracking-tight">Help for the services that keep your business running.</h3>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">AI Workflows helps your team detect issues, guide recovery, and confirm service health across common infrastructure.</p>
       </div>
@@ -432,7 +439,7 @@ export function WorkflowExplorer() {
           ["Apache", "Web server recovery", "server"],
           ["MSSQL", "Service health checks", "database"],
           ["Nginx", "Application availability", "server"],
-        ].map(([service, description, icon]) => <Card data-reveal key={service} className="gap-0 rounded-xl border-line p-6 shadow-none"><span className="flex size-11 items-center justify-center rounded-xl bg-brand-green/10 text-[#007746]"><Icon name={icon} className="size-5" /></span><h4 className="mt-7 font-display text-2xl tracking-tight">{service}</h4><p className="mt-2 text-xs text-muted-foreground">{description}</p><p className="mt-6 border-t border-line pt-4 text-[10px] text-[#007746]">Detect · Guide · Validate</p></Card>)}
+        ].map(([service, description, icon]) => <Card data-reveal key={service} className="gap-0 rounded-xl border-line p-6 shadow-none"><span className="flex size-11 items-center justify-center rounded-xl bg-brand-green/10 text-brand-green-deep"><Icon name={icon} className="size-5" /></span><h4 className="mt-7 font-display text-2xl tracking-tight">{service}</h4><p className="mt-2 text-xs text-muted-foreground">{description}</p><p className="mt-6 border-t border-line pt-4 text-[10px] text-brand-green-deep">Detect · Guide · Validate</p></Card>)}
       </div>
       <div
         id="workflow-terminal"
@@ -511,19 +518,19 @@ export function ArchitecturePipeline() {
         {nodes.map((n, i) => (
           <Tooltip key={n.name}>
             <TooltipTrigger asChild>
-              <button className="relative flex flex-col items-center gap-5 rounded-2xl border border-line bg-white p-6 text-center outline-none focus-visible:ring-2 focus-visible:ring-brand-purple">
+              <button className="relative flex flex-col items-center gap-5 rounded-2xl border border-line bg-white p-6 text-center outline-none focus-visible:ring-2 focus-visible:ring-brand-pink">
                 <span
                   className={cn(
                     "hex flex size-20 items-center justify-center",
                     i === 2
-                      ? "bg-brand-purple text-white"
-                      : "bg-mist text-brand-blue",
+                      ? "bg-brand-pink text-white"
+                      : "bg-mist text-brand-orange",
                   )}
                 >
                   <Icon name={n.icon} className="size-8" />
                 </span>
                 <span className="text-sm font-medium">{n.name}</span>
-                <span className="font-mono text-[10px] text-muted-foreground">
+                <span className="font-mono text-[11px] text-brand-pink-deep">
                   0{i + 1} {i < 4 ? "→" : "✓"}
                 </span>
               </button>
@@ -541,7 +548,7 @@ export function TrustLadder() {
   const [value, setValue] = useState([0]);
   return (
     <Card className="border-line p-8 shadow-none">
-      <Badge className="w-fit bg-brand-purple/10 text-brand-purple">
+      <Badge className="w-fit bg-brand-pink/10 text-brand-pink">
         In progress
       </Badge>
       <h3 className="font-display text-2xl">Automation at your pace.</h3>
@@ -563,7 +570,7 @@ export function TrustLadder() {
               key={s}
               className={
                 i === value[0]
-                  ? "font-semibold text-brand-purple"
+                  ? "font-semibold text-brand-pink"
                   : "text-muted-foreground"
               }
             >

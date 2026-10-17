@@ -16,7 +16,7 @@ function Hexes() {
     return () => mm.revert();
   });
   return <group ref={group} rotation={[.25, -.32, -.1]} onPointerMove={e => { if (group.current && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) gsap.to(group.current.rotation, { y: e.point.x * .09, x: e.point.y * .07, duration: 1 }); }}>
-    {[[0, .85, "#aa10d0"], [-.95, -.65, "#01a862"], [.95, -.65, "#0094da"]].map(([x, y, color], i) => <mesh key={i} position={[Number(x), Number(y), i * .12]}><extrudeGeometry args={[shape, { depth: .38, bevelEnabled: true, bevelSize: .08, bevelThickness: .08, bevelSegments: 1, steps: 1 }]}/><meshStandardMaterial color={String(color)} flatShading roughness={1}/></mesh>)}
+    {[[0, .85, "#ff38af"], [-.95, -.65, "#0b9e76"], [.95, -.65, "#ff6b2c"]].map(([x, y, color], i) => <mesh key={i} position={[Number(x), Number(y), i * .12]}><extrudeGeometry args={[shape, { depth: .38, bevelEnabled: true, bevelSize: .08, bevelThickness: .08, bevelSegments: 1, steps: 1 }]}/><meshStandardMaterial color={String(color)} flatShading roughness={1}/></mesh>)}
   </group>;
 }
 export default function LogoScene() { return <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 6], fov: 42 }} gl={{ alpha: true, antialias: true }}><ambientLight intensity={2}/><directionalLight position={[4, 5, 6]} intensity={2}/><Hexes/></Canvas>; }

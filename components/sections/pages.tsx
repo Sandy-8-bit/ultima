@@ -135,7 +135,7 @@ export function StandardPage({ slug }: { slug: string }) {
               ].map(([n, c, icon, text], i) => (
                 <Card
                   key={n}
-                  className={`gap-6 rounded-2xl border-0 p-8 ${c === "purple" ? "bg-brand-purple/8" : c === "blue" ? "bg-brand-blue/8" : "bg-brand-green/8"}`}
+                  className={`gap-6 rounded-2xl border-0 p-8 ${c === "purple" ? "bg-brand-pink/8" : c === "blue" ? "bg-brand-orange/8" : "bg-brand-green/8"}`}
                 >
                   <span className="font-mono text-xs text-muted-foreground">
                     0{i + 1}
@@ -162,9 +162,9 @@ export function StandardPage({ slug }: { slug: string }) {
               />
               <div className="mt-12 flex flex-wrap justify-between gap-6 text-sm">
                 {[
-                  ["#5bc65b", "Healthy"],
-                  ["#f5c542", "Warning · potential issue"],
-                  ["#ef5350", "Critical · act now"],
+                  ["#0b9e76", "Healthy"],
+                  ["#f5a524", "Warning · potential issue"],
+                  ["#f04438", "Critical · act now"],
                 ].map(([color, label], i) => (
                   <p className="flex items-center gap-3" key={label}>
                     <span
@@ -275,11 +275,11 @@ export function StandardPage({ slug }: { slug: string }) {
               className={i % 2 === 0 ? "bg-mist" : "bg-white"}
             >
               <div className={section + " flex items-center gap-8 md:gap-20"}>
-                <span className="font-display text-5xl text-brand-purple/25 md:text-8xl">
+                <span className="font-display text-5xl text-brand-pink/25 md:text-8xl">
                   0{i + 1}
                 </span>
                 <div>
-                  <Icon name={icon} className="mb-5 size-8 text-brand-purple" />
+                  <Icon name={icon} className="mb-5 size-8 text-brand-pink" />
                   <h2 className="font-display text-4xl tracking-tight">
                     {title}
                   </h2>
@@ -326,7 +326,7 @@ export function StandardPage({ slug }: { slug: string }) {
               <Card
                 data-reveal
                 key={s.value}
-                className={`min-h-80 justify-between rounded-2xl border-0 p-10 text-white ${["bg-brand-purple", "bg-[#007d49]", "bg-[#007cb7]", "bg-ink"][i]}`}
+                className={`min-h-80 justify-between rounded-2xl border-0 p-10 text-white ${["bg-brand-pink", "bg-brand-green-deep", "bg-brand-orange-deep", "bg-ink"][i]}`}
               >
                 <Icon
                   name={["intelligence", "shield", "actions", "board"][i]}
@@ -353,14 +353,14 @@ export function StandardPage({ slug }: { slug: string }) {
                 <h2 className="mt-5 font-display text-5xl tracking-tight">
                   Typical ROI within
                   <br />
-                  <span className="text-brand-purple">6 months.</span>
+                  <span className="text-brand-pink">6 months.</span>
                 </h2>
               </div>
               <div className="flex gap-3">
                 {[1, 2, 3, 4, 5, 6].map((n) => (
                   <div
                     key={n}
-                    className="flex h-24 w-9 items-end justify-center rounded-lg bg-brand-purple/10 pb-3 font-mono text-xs text-brand-purple sm:w-12"
+                    className="flex h-24 w-9 items-end justify-center rounded-lg bg-brand-pink/10 pb-3 font-mono text-xs text-brand-pink sm:w-12"
                   >
                     {n}
                   </div>
@@ -374,9 +374,9 @@ export function StandardPage({ slug }: { slug: string }) {
       {slug === "integrations" && (
         <>
           <section data-reveal className={section + " pt-0"}>
-            <div className="grid items-center gap-10 rounded-2xl bg-[#eef6f0] p-8 md:grid-cols-2 md:p-12">
+            <div className="grid items-center gap-10 rounded-2xl bg-[#eaf6f1] p-8 md:grid-cols-2 md:p-12">
               <div>
-                <p className="font-display text-4xl font-medium tracking-tight text-[#315c41]">
+                <p className="font-display text-4xl font-medium tracking-tight text-brand-green-deep">
                   ServiceNow
                 </p>
                 <h2 className="mt-7 font-display text-3xl tracking-tight">
@@ -397,10 +397,10 @@ export function StandardPage({ slug }: { slug: string }) {
                   "Customer ServiceNow API integration",
                 ].map((s, i) => (
                   <div
-                    className="flex gap-4 rounded-lg border border-[#d6e6da] bg-white p-4 text-sm"
+                    className="flex gap-4 rounded-lg border border-[#cbe8dc] bg-white p-4 text-sm"
                     key={s}
                   >
-                    <span className="text-[#007746]">0{i + 1}</span>
+                    <span className="text-brand-green-deep">0{i + 1}</span>
                     {s}
                   </div>
                 ))}
@@ -447,7 +447,7 @@ export function StandardPage({ slug }: { slug: string }) {
               className="gap-6 rounded-2xl border-line p-8 shadow-none md:p-12"
             >
               <div className="flex justify-between">
-                <Badge className="bg-brand-purple/10 text-brand-purple">
+                <Badge className="bg-brand-pink/10 text-brand-pink">
                   In progress
                 </Badge>
                 <span className="font-mono text-xs text-muted-foreground">
@@ -542,7 +542,7 @@ export function StandardPage({ slug }: { slug: string }) {
                 : "The final terms governing access and use of this website are pending."}
             </p>
             <a
-              className="text-sm text-brand-purple"
+              className="text-sm text-brand-pink"
               href="mailto:info@wisework.in"
             >
               Contact info@wisework.in
@@ -575,7 +575,7 @@ function SourceTiles() {
         >
           <Icon
             name={i % 2 === 0 ? "server" : "database"}
-            className="text-brand-blue"
+            className="text-brand-orange"
           />
           <p className="text-xs">{s}</p>
         </div>
@@ -596,7 +596,7 @@ function Setup() {
             Depends on your environment. Setup phases below are illustrative.
           </p>
         </div>
-        <Button asChild className="bg-ink">
+        <Button asChild className="h-11 rounded-2xl px-6">
           <Link href="/contact">
             Talk to us <ArrowUpRight />
           </Link>
@@ -604,7 +604,7 @@ function Setup() {
       </div>
       <div className="mt-10 grid gap-4 sm:grid-cols-3">
         {["Connect data", "Configure", "Go live"].map((s, i) => (
-          <div key={s} className="border-t-2 border-brand-purple pt-5 text-sm">
+          <div key={s} className="border-t-2 border-brand-pink pt-5 text-sm">
             <span className="mr-4 font-mono text-xs text-muted-foreground">
               0{i + 1}
             </span>
@@ -678,7 +678,7 @@ export function FeaturePage({ slug }: { slug: string }) {
       )}
       {slug === "wise-actions" && (
         <section data-reveal className={section + " text-center"}>
-          <p className="font-display text-8xl tracking-tight text-[#007746]">
+          <p className="font-display text-8xl tracking-tight text-brand-green-deep">
             50%
           </p>
           <p className="mt-5 text-sm text-muted-foreground">
@@ -742,12 +742,12 @@ export function IndustryPage({ slug }: { slug: string }) {
             </div>
             <div className="flex min-h-64 items-center justify-center">
               {n === 2 ? (
-                <p className="font-display text-[120px] tracking-[-.07em] text-brand-purple">
+                <p className="font-display text-[120px] tracking-[-.07em] text-brand-pink">
                   {i.stat}
                 </p>
               ) : (
-                <span className="hex flex size-52 items-center justify-center bg-brand-purple/10">
-                  <Icon name={i.icon} className="size-20 text-brand-purple" />
+                <span className="hex flex size-52 items-center justify-center bg-brand-pink/10">
+                  <Icon name={i.icon} className="size-20 text-brand-pink" />
                 </span>
               )}
             </div>
