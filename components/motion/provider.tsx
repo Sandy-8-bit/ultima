@@ -45,5 +45,5 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
     });
     return () => mm.revert();
   }, { scope, dependencies: [pathname], revertOnUpdate: true });
-  return <div ref={scope}><div data-route-wipe className="pointer-events-none fixed inset-0 z-[90] origin-right scale-x-0 bg-mist"/><div data-scroll-progress className="fixed inset-x-0 top-0 z-[80] h-0.5 origin-left scale-x-0 bg-brand-pink"/>{children}<Toaster position="bottom-right" richColors /></div>;
+  return <div ref={scope}><div data-route-wipe className="pointer-events-none fixed inset-0 z-[90] origin-right scale-x-0 bg-mist"/><div data-scroll-progress className="fixed inset-x-0 top-0 z-[80] h-0.5 origin-left scale-x-0 bg-brand-purple"/>{children}<Toaster position="bottom-right" richColors /></div>;
 }

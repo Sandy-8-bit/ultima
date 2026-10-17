@@ -50,7 +50,7 @@ export function FAQ({ preview = false }: { preview?: boolean }) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Find your answer…"
-              className="h-12 rounded-2xl border-[#ebebeb] bg-white pl-10 shadow-soft"
+              className="h-12 rounded-2xl border-[#e2e0ec] bg-white pl-10 shadow-soft"
             />
           </div>
           <div className="flex flex-wrap gap-2">
@@ -73,9 +73,9 @@ export function FAQ({ preview = false }: { preview?: boolean }) {
       <Accordion type="single" collapsible>
         {list.map((f, i) => (
           <AccordionItem key={f.q} value={f.q} className="border-line">
-            <AccordionTrigger className="py-6 text-left text-[15px] font-medium text-graphite hover:text-brand-pink-deep hover:no-underline">
+            <AccordionTrigger className="py-6 text-left text-[15px] font-medium text-ink hover:text-brand-purple-deep hover:no-underline">
               <span className="flex gap-5">
-                <span className="font-mono text-[11px] text-brand-pink-deep">
+                <span className="font-mono text-[11px] text-brand-purple-deep">
                   0{i + 1}
                 </span>
                 {f.q}
@@ -117,15 +117,15 @@ export function Video() {
           <Logo />
         </span>
         <span className="relative flex size-20 items-center justify-center">
-          <span aria-hidden className="absolute inset-0 rounded-full bg-brand-pink/40 motion-safe:animate-pulse-ring" />
+          <span aria-hidden className="absolute inset-0 rounded-full bg-brand-purple/40 motion-safe:animate-pulse-ring" />
           <span
             data-float
-            className="relative flex size-20 items-center justify-center rounded-full bg-brand-pink text-white shadow-glow transition-transform duration-300 group-hover:scale-105"
+            className="relative flex size-20 items-center justify-center rounded-full bg-brand-purple text-white shadow-glow transition-transform duration-300 group-hover:scale-105"
           >
             <Play className="ml-1 size-7" fill="currentColor" />
           </span>
         </span>
-        <span className="relative mt-8 font-display text-2xl tracking-[-.02em] text-graphite md:text-3xl">
+        <span className="relative mt-8 font-display text-2xl tracking-[-.02em] text-ink md:text-3xl">
           Intelligent Operations, <em className="font-light">Simplified!</em>
         </span>
         <span className="relative mt-3 rounded-full bg-white/80 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
@@ -200,7 +200,7 @@ export function DependencyMap() {
       <div className="mb-5 flex justify-between">
         <Badge
           variant="outline"
-          className="border-brand-pink/20 text-brand-pink"
+          className="border-brand-purple/20 text-brand-purple"
         >
           Impact analysis
         </Badge>
@@ -223,7 +223,7 @@ export function DependencyMap() {
           <path data-connection d="M110 140H315" />
           <path data-connection d="M110 140C210 140 200 225 315 225" />
         </g>
-        <circle data-pulse r="4" fill="#ff38af" />
+        <circle data-pulse r="4" fill="#aa10d0" />
         <rect
           x="20"
           y="100"
@@ -387,9 +387,9 @@ export function LearningLoop() {
     >
       <div
         ref={ring}
-        className="absolute inset-6 rounded-full border-2 border-dashed border-brand-pink/25"
+        className="absolute inset-6 rounded-full border-2 border-dashed border-brand-purple/25"
       >
-        <span className="absolute top-1/2 -left-2 size-4 rounded-full bg-brand-pink" />
+        <span className="absolute top-1/2 -left-2 size-4 rounded-full bg-brand-purple" />
         <span className="absolute top-1/2 -right-2 size-4 rounded-full bg-brand-green" />
       </div>
       <div className="flex size-36 items-center justify-center rounded-full border border-line bg-white shadow-hard">
@@ -429,7 +429,7 @@ export function WorkflowExplorer() {
   return (
     <div ref={scope}>
       <div className="mb-8 max-w-xl">
-        <p className="font-mono text-[10px] uppercase tracking-[.16em] text-brand-pink">Supported systems</p>
+        <p className="font-mono text-[10px] uppercase tracking-[.16em] text-brand-purple">Supported systems</p>
         <h3 className="mt-3 font-display text-3xl tracking-tight">Help for the services that keep your business running.</h3>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">AI Workflows helps your team detect issues, guide recovery, and confirm service health across common infrastructure.</p>
       </div>
@@ -518,19 +518,19 @@ export function ArchitecturePipeline() {
         {nodes.map((n, i) => (
           <Tooltip key={n.name}>
             <TooltipTrigger asChild>
-              <button className="relative flex flex-col items-center gap-5 rounded-2xl border border-line bg-white p-6 text-center outline-none focus-visible:ring-2 focus-visible:ring-brand-pink">
+              <button className="relative flex flex-col items-center gap-5 rounded-2xl border border-line bg-white p-6 text-center outline-none focus-visible:ring-2 focus-visible:ring-brand-purple">
                 <span
                   className={cn(
                     "hex flex size-20 items-center justify-center",
                     i === 2
-                      ? "bg-brand-pink text-white"
-                      : "bg-mist text-brand-orange",
+                      ? "bg-brand-purple text-white"
+                      : "bg-mist text-brand-blue",
                   )}
                 >
                   <Icon name={n.icon} className="size-8" />
                 </span>
                 <span className="text-sm font-medium">{n.name}</span>
-                <span className="font-mono text-[11px] text-brand-pink-deep">
+                <span className="font-mono text-[11px] text-brand-purple-deep">
                   0{i + 1} {i < 4 ? "→" : "✓"}
                 </span>
               </button>
@@ -548,7 +548,7 @@ export function TrustLadder() {
   const [value, setValue] = useState([0]);
   return (
     <Card className="border-line p-8 shadow-none">
-      <Badge className="w-fit bg-brand-pink/10 text-brand-pink">
+      <Badge className="w-fit bg-brand-purple/10 text-brand-purple">
         In progress
       </Badge>
       <h3 className="font-display text-2xl">Automation at your pace.</h3>
@@ -570,7 +570,7 @@ export function TrustLadder() {
               key={s}
               className={
                 i === value[0]
-                  ? "font-semibold text-brand-pink"
+                  ? "font-semibold text-brand-purple"
                   : "text-muted-foreground"
               }
             >

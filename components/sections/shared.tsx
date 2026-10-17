@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export function Eyebrow({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={cn("flex items-center gap-2.5 text-[13px] font-medium tracking-[-.01em] text-muted-foreground", className)}>
-      <span className="size-1.5 rounded-full bg-brand-pink" />
+      <span className="size-1.5 rounded-full bg-brand-purple" />
       {children}
     </div>
   );
@@ -25,7 +25,7 @@ export function DotMark({ light = false, className }: { light?: boolean; classNa
           key={i}
           className={cn(
             "rounded-full",
-            i === 4 ? "bg-ink" : light ? "bg-white" : "bg-brand-pink",
+            i === 4 ? "bg-ink" : light ? "bg-white" : "bg-brand-purple",
           )}
         />
       ))}
@@ -33,7 +33,7 @@ export function DotMark({ light = false, className }: { light?: boolean; classNa
   );
 }
 
-/** Renders a "\n"-separated title with the last line in brand pink. */
+/** Renders a "\n"-separated title with the last line in brand purple. */
 function AccentTitle({ title }: { title: string }) {
   const lines = title.split("\n");
   if (lines.length < 2) return <>{title}</>;
@@ -41,7 +41,7 @@ function AccentTitle({ title }: { title: string }) {
     <>
       {lines.slice(0, -1).join("\n")}
       {"\n"}
-      <span className="text-brand-pink">{lines.at(-1)}</span>
+      <span className="text-brand-purple">{lines.at(-1)}</span>
     </>
   );
 }
@@ -54,7 +54,7 @@ export function PageHero({ label, title, description, children }: { label: strin
       <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-16 md:px-10 md:pt-24">
         <div data-page-enter>
           <Eyebrow className="capitalize">{label}</Eyebrow>
-          <h1 data-split className="mt-7 max-w-4xl font-display text-5xl leading-[1.02] font-normal tracking-[-.025em] whitespace-pre-line text-graphite md:text-7xl lg:text-[84px]">
+          <h1 data-split className="mt-7 max-w-4xl font-display text-5xl leading-[1.02] font-normal tracking-[-.025em] whitespace-pre-line text-ink md:text-7xl lg:text-[84px]">
             <AccentTitle title={title} />
           </h1>
           <p className="mt-7 max-w-xl text-base leading-7 text-muted-foreground md:text-lg">{description}</p>
@@ -67,7 +67,7 @@ export function PageHero({ label, title, description, children }: { label: strin
 
 export function CTA({ home = false }: { home?: boolean }) {
   return (
-    <section data-reveal className="relative overflow-hidden bg-brand-pink px-6 pt-24 pb-10 text-white md:px-12 md:pt-28">
+    <section data-reveal className="relative overflow-hidden bg-brand-purple px-6 pt-24 pb-10 text-white md:px-12 md:pt-28">
       <DotMark light className="absolute top-8 right-6 xl:right-16" />
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
         <Eyebrow className="text-white [&>span]:bg-white">Your next move</Eyebrow>
@@ -75,7 +75,7 @@ export function CTA({ home = false }: { home?: boolean }) {
           {home ? <>Turn IT into a<br /><em className="font-light">strategic advantage.</em></> : <>Less firefighting.<br /><em className="font-light">More moving forward.</em></>}
         </h2>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Button asChild className="h-12 rounded-2xl bg-white px-7 text-ink shadow-[0_6px_20px_-4px_rgb(255_120_90/70%)] hover:bg-white/90">
+          <Button asChild className="h-12 rounded-2xl bg-white px-7 text-ink shadow-[0_6px_20px_-4px_rgb(11_11_20/22%)] hover:bg-white/90">
             <Link href="/contact">Book a demo <ArrowUpRight /></Link>
           </Button>
           <Button asChild variant="outline" className="h-12 rounded-2xl border-white/60 bg-transparent px-7 text-white hover:bg-white/10 hover:text-white">
@@ -88,9 +88,9 @@ export function CTA({ home = false }: { home?: boolean }) {
 }
 
 const featureTint = {
-  purple: "bg-brand-pink-soft text-brand-pink-deep",
+  purple: "bg-brand-purple-soft text-brand-purple-deep",
   green: "bg-brand-green/10 text-brand-green-deep",
-  blue: "bg-brand-orange/10 text-brand-orange-deep",
+  blue: "bg-brand-blue/10 text-brand-blue-deep",
 } as const;
 
 export function FeatureGrid({ compact = false }: { compact?: boolean }) {
@@ -118,7 +118,7 @@ export function IndustryGrid() {
     <div className="panel grid gap-px overflow-hidden rounded-2xl sm:grid-cols-2 lg:grid-cols-4">
       {industries.map((i, n) => (
         <article data-reveal key={i.slug} className="group relative bg-white/60 p-7 transition-colors hover:bg-white">
-          <span className="mb-10 flex size-14 items-center justify-center rounded-xl bg-[#f1f1f1] text-graphite transition-colors group-hover:bg-brand-pink group-hover:text-white">
+          <span className="mb-10 flex size-14 items-center justify-center rounded-xl bg-[#f3f2f8] text-ink transition-colors group-hover:bg-brand-purple group-hover:text-white">
             <Icon name={i.icon} className="size-6" />
           </span>
           <span className="absolute top-7 right-7 font-mono text-[11px] text-muted-foreground">0{n + 1}</span>
@@ -134,7 +134,7 @@ export function Stats({ colorful = false }: { colorful?: boolean }) {
   return (
     <div className="grid grid-cols-2 gap-y-10 md:grid-cols-4">
       {stats.map((s, i) => (
-        <div key={s.value} data-reveal className={cn("border-l border-line pl-5 md:pl-8", colorful && ["text-brand-pink", "text-brand-green-deep", "text-brand-orange-deep", "text-ink"][i])}>
+        <div key={s.value} data-reveal className={cn("border-l border-line pl-5 md:pl-8", colorful && ["text-brand-purple", "text-brand-green-deep", "text-brand-blue-deep", "text-ink"][i])}>
           <p className="font-mono text-5xl font-medium tracking-[-.04em] md:text-6xl">
             <span data-count={s.value}>{s.value}</span>
             <span className="text-[.55em]">%</span>
@@ -155,7 +155,7 @@ export function Points({ items }: { items: readonly string[] }) {
       {items.map((p, i) => (
         <Card key={p} data-reveal className="panel gap-0 rounded-2xl p-7 shadow-none">
           <div className="flex items-center justify-between">
-            <span className="flex size-9 items-center justify-center rounded-full bg-brand-pink text-white">
+            <span className="flex size-9 items-center justify-center rounded-full bg-brand-purple text-white">
               <Check className="size-4" />
             </span>
             <span className="font-mono text-xs text-muted-foreground">0{i + 1}</span>

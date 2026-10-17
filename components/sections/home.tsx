@@ -27,25 +27,25 @@ export function Home() {
         <div className="relative mx-auto max-w-[1440px] px-6 pt-14 pb-10 md:px-10 md:pt-20 xl:px-16">
           <div className="grid items-center gap-14 lg:grid-cols-[1fr_1fr] lg:gap-10">
             <div data-page-enter className="relative z-10">
-              <span className="inline-flex items-center gap-2.5 rounded-[15px] border-2 border-[#ebebeb] bg-white p-2 pr-4">
-                <span className="flex size-6 items-center justify-center rounded-lg bg-graphite text-white">
+              <span className="inline-flex items-center gap-2.5 rounded-[15px] border-2 border-[#e2e0ec] bg-white p-2 pr-4">
+                <span className="flex size-6 items-center justify-center rounded-lg bg-ink text-white">
                   <ArrowRight className="size-3.5" />
                 </span>
-                <span className="text-[13px] font-medium text-graphite">
+                <span className="text-[13px] font-medium text-ink">
                   From reactive to proactive intelligence
                 </span>
               </span>
-              <h1 className="mt-7 font-display text-[clamp(3.6rem,7vw,6.4rem)] leading-[.96] font-normal tracking-[-.02em] text-graphite">
+              <h1 className="mt-7 font-display text-[clamp(3.6rem,7vw,6.4rem)] leading-[.96] font-normal tracking-[-.02em] text-ink">
                 <span className="block">Predict.</span>
                 <span className="block">Prevent.</span>
-                <span className="block text-brand-pink">
-                  Act<span className="text-graphite">.</span>
+                <span className="block text-brand-purple">
+                  Act<span className="text-ink">.</span>
                 </span>
               </h1>
-              <p className="mt-7 font-display text-2xl tracking-[-.02em] text-graphite">
+              <p className="mt-7 font-display text-2xl tracking-[-.02em] text-ink">
                 Intelligent Operations, <em className="font-light">Simplified!</em>
               </p>
-              <p className="mt-3 max-w-[420px] text-base leading-[1.6] text-graphite/80">
+              <p className="mt-3 max-w-[420px] text-base leading-[1.6] text-ink/80">
                 Predict issues before they arise. Resolve risks before they escalate.
                 Keep your IT one step ahead.
               </p>
@@ -61,17 +61,17 @@ export function Home() {
                 <Button
                   asChild
                   variant="outline"
-                  className="h-[52px] rounded-[18px] border-[#ebebeb] px-6 text-[15px] text-graphite shadow-soft"
+                  className="h-[52px] rounded-[18px] border-[#e2e0ec] px-6 text-[15px] text-ink shadow-soft"
                 >
                   <a href="#watch-video">
-                    <span className="flex size-6 items-center justify-center rounded-full bg-brand-pink-soft text-brand-pink">
+                    <span className="flex size-6 items-center justify-center rounded-full bg-brand-purple-soft text-brand-purple">
                       <Play className="ml-0.5 size-2.5" fill="currentColor" />
                     </span>
                     Watch video
                   </a>
                 </Button>
               </div>
-              <div className="mt-8 flex items-center gap-2.5 text-[13px] text-graphite/80">
+              <div className="mt-8 flex items-center gap-2.5 text-[13px] text-ink/80">
                 <span className="flex size-5 items-center justify-center rounded-full bg-brand-green/15 text-brand-green-deep">
                   <Check className="size-3" />
                 </span>
@@ -87,7 +87,7 @@ export function Home() {
                   priority
                   unoptimized
                   alt="Sample Wise Ultima dashboard showing database and memory utilization, server health across all regions, and a critical app with predicted disk space exhaustion"
-                  className="h-auto w-full drop-shadow-[0_30px_60px_rgb(242_66_27/12%)]"
+                  className="h-auto w-full drop-shadow-[0_30px_60px_rgb(170_16_208/12%)]"
                 />
               </div>
               <div className="absolute bottom-0 left-2 z-20 flex items-center gap-3 rounded-2xl border border-white/70 bg-white/85 px-4 py-3 shadow-hard backdrop-blur-md md:-left-4">
@@ -102,7 +102,7 @@ export function Home() {
                     Illustrative auto-healing scenario
                   </p>
                 </div>
-                <Sparkles className="ml-2 size-3.5 text-brand-pink" />
+                <Sparkles className="ml-2 size-3.5 text-brand-purple" />
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ export function Home() {
               className="group flex items-center gap-3 text-xs text-muted-foreground transition-colors hover:text-ink"
             >
               Scroll to discover
-              <span className="flex size-7 items-center justify-center rounded-full border border-ink/10 bg-white transition-colors group-hover:border-brand-pink group-hover:text-brand-pink">
+              <span className="flex size-7 items-center justify-center rounded-full border border-ink/10 bg-white transition-colors group-hover:border-brand-purple group-hover:text-brand-purple">
                 <ArrowDown className="size-3" />
               </span>
             </a>
@@ -164,7 +164,7 @@ export function Home() {
         <Stats />
       </section> */}
       <OperationsStory />
-      <section className="relative overflow-hidden bg-brand-pink px-6 py-24 text-white md:px-10 md:py-32">
+      <section className="relative overflow-hidden bg-brand-purple px-6 py-24 text-white md:px-10 md:py-32">
         <DotMark light className="absolute top-8 right-6 xl:right-16" />
         <div
           aria-hidden
@@ -201,7 +201,7 @@ export function Home() {
           </div>
           <h2
             data-split
-            className="mt-5 font-display text-4xl tracking-[-.02em] text-graphite md:text-5xl"
+            className="mt-5 font-display text-4xl tracking-[-.02em] text-ink md:text-5xl"
           >
             See Wise Ultima in 2 minutes.
           </h2>
@@ -260,7 +260,7 @@ export function Home() {
             <Eyebrow>Built for your world</Eyebrow>
             <h2
               data-split
-              className="mt-5 font-display text-4xl tracking-[-.02em] text-graphite md:text-5xl"
+              className="mt-5 font-display text-4xl tracking-[-.02em] text-ink md:text-5xl"
             >
               Different industries. <em className="font-light">Same foresight.</em>
             </h2>
@@ -272,14 +272,14 @@ export function Home() {
         <div className="panel mx-auto grid max-w-7xl gap-10 rounded-2xl p-7 md:grid-cols-[.8fr_1.2fr] md:p-12">
           <div data-reveal>
             <Eyebrow>A little more clarity</Eyebrow>
-            <h2 className="mt-5 font-display text-4xl tracking-[-.02em] text-graphite">
+            <h2 className="mt-5 font-display text-4xl tracking-[-.02em] text-ink">
               Good questions.
               <br />
               <em className="font-light">Clear answers.</em>
             </h2>
             <Link
               href="/faq"
-              className="group mt-8 inline-flex items-center gap-3 rounded-[18px] bg-brand-pink px-5 py-3 text-sm font-medium text-white shadow-glow transition-colors hover:bg-brand-pink-deep"
+              className="group mt-8 inline-flex items-center gap-3 rounded-[18px] bg-brand-purple px-5 py-3 text-sm font-medium text-white shadow-glow transition-colors hover:bg-brand-purple-deep"
             >
               All your questions <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </Link>

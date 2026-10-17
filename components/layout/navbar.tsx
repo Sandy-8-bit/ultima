@@ -46,14 +46,14 @@ export function Navbar() {
   return (
     <header
       ref={ref}
-      className="sticky top-0 z-50 border-b border-ink/5 bg-canvas/80 backdrop-blur-xl"
+      className="sticky top-0 z-50 border-b border-ink/5 bg-white/80 backdrop-blur-xl"
     >
       <div className="mx-auto flex h-[82px] max-w-[1440px] items-center justify-between gap-5 px-5 md:px-10 xl:px-16">
         <Link href="/" aria-label="Wise Ultima home">
           <Logo />
         </Link>
         <NavigationMenu className="hidden lg:flex" viewport={false}>
-          <NavigationMenuList className="gap-1 rounded-2xl border border-[#ebebeb] bg-white/70 p-1">
+          <NavigationMenuList className="gap-1 rounded-2xl border border-[#e2e0ec] bg-white/70 p-1">
             {[
               ["Home", "/"],
               ["Demo", "/demo"],
@@ -63,8 +63,8 @@ export function Navbar() {
                   <Link
                     href={href}
                     className={cn(
-                      "rounded-xl px-4 py-2 text-[14px] text-graphite transition-colors hover:bg-white hover:text-ink",
-                      path === href && "bg-white text-brand-pink-deep shadow-[0_1px_3px_rgb(27_28_32/8%)]",
+                      "rounded-xl px-4 py-2 text-[14px] text-ink transition-colors hover:bg-white hover:text-ink",
+                      path === href && "bg-white text-brand-purple-deep shadow-[0_1px_3px_rgb(27_28_32/8%)]",
                     )}
                   >
                     {label}
@@ -97,7 +97,7 @@ export function Navbar() {
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent className="overflow-y-auto bg-canvas p-6">
+            <SheetContent className="overflow-y-auto bg-white p-6">
               <SheetTitle>
                 <Logo />
               </SheetTitle>
@@ -113,7 +113,7 @@ export function Navbar() {
                     key={href}
                     onClick={() => setOpen(false)}
                     href={href}
-                    className={cn("rounded-xl px-3 py-2.5 text-sm hover:bg-white", path === href && "bg-white text-brand-pink-deep")}
+                    className={cn("rounded-xl px-3 py-2.5 text-sm hover:bg-white", path === href && "bg-white text-brand-purple-deep")}
                   >
                     {name}
                   </Link>
