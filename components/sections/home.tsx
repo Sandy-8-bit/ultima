@@ -171,7 +171,7 @@ export function Home() {
           className="glow-blob absolute -bottom-[45%] left-1/2 h-[80%] w-[60%] -translate-x-1/2 opacity-70"
         />
         <div className="relative mx-auto max-w-7xl">
-          <h2 className="text-center font-display text-5xl tracking-[-.02em] md:text-6xl">ROI</h2>
+          <h2 className="text-center font-display text-5xl tracking-[-.02em] md:text-6xl">Bussiness Values</h2>
           <div className="mt-16 grid gap-10 sm:grid-cols-2 md:grid-cols-4 md:gap-6">
             {[
               [25, "Early issue detection"],
